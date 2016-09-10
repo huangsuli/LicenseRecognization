@@ -10,6 +10,7 @@ IplImage* findLicense(IplImage* img){
    int width, height;
    list<CvRect> rects;
    CvSize size = cvGetSize(img);
+   IplImage* copy = cvCloneImage(img);
 
    //Initialize the image variable
    IplImage* gray = cvCreateImage( size, IPL_DEPTH_8U,1 );  
@@ -62,6 +63,12 @@ IplImage* findLicense(IplImage* img){
     	}
     }
     cvSetImageROI(img,cvRect(x,y,width,height));
+    
+    cvNamedWindow("window0", CV_WINDOW_AUTOSIZE);
+    cvShowImage("window0", img);
+
+    cvNamedWindow("window111", CV_WINDOW_AUTOSIZE);
+    cvShowImage("window111", copy);
     return erode_dilate;
        
 }

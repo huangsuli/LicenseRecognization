@@ -74,8 +74,8 @@ list<IplImage*> findCharacters(IplImage* img){
       it ++;
    }
 
-   //cvNamedWindow("window1", CV_WINDOW_AUTOSIZE);
-   //cvShowImage("window1", copy);
+   cvNamedWindow("window1", CV_WINDOW_AUTOSIZE);
+   cvShowImage("window1", copy);
    //cvNamedWindow("window2", CV_WINDOW_AUTOSIZE);
    //cvShowImage("window2", gray);
    //cvWaitKey(0);
